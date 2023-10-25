@@ -9,17 +9,17 @@ export const register = async (req, res) => {
         const passwordHash = await bcrypt.hash(password, 10)
         const currentDate = new Date().toISOString().slice(0, 19).replace('T', ' ')
 
-        await connection.query('INSERT INTO usuario (nombre, email, contrasena, creado) VALUES (?, ?, ?, ?)', 
-        [username, email, passwordHash, currentDate])
+        await connection.query('INSERT INTO usuario (nombre, email, contrasena, creado) VALUES (?, ?, ?, ?)',
+            [username, email, passwordHash, currentDate])
 
-        const token = await createAccessToken({username})
-        
+        const token = await createAccessToken({ username })
+
         res.cookie('token', token)
-        res.json({message: 'Usuario creado correctamente'})
+        res.json({ message: 'Usuario creado correctamente' })
 
     } catch (error) {
         console.error('Error al crear el usuario:', error)
-        res.status(500).json({message: error.message})
+        res.status(500).json({ message: error.message })
     }
 }
 
@@ -42,8 +42,8 @@ export const login = async (req, res) => {
                 message: 'Contraseña incorrecta'
             })
         }
-        
-        const token = await createAccessToken({email})
+
+        const token = await createAccessToken({ email })
 
         res.cookie('token', token)
 
@@ -51,6 +51,11 @@ export const login = async (req, res) => {
 
     } catch (error) {
         console.error('Error al crear el usuario:', error)
-        res.status(500).json({message: error.message})
+        res.status(500).json({ message: error.message })
     }
+}
+
+export const logout = async (req, res) => {
+    res.clearCookie('token')
+    res.sendStatus(200)
 }
