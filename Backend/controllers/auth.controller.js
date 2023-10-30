@@ -12,7 +12,10 @@ export const register = async (req, res) => {
         await connection.query('INSERT INTO usuario (nombre, email, contrasena, creado) VALUES (?, ?, ?, ?)',
             [username, email, passwordHash, currentDate])
 
-        const token = await createAccessToken({ username })
+        const idUserSaved = await connection.query('SELECT LAST_INSERT_ID() as id')
+        const userId = idUserSaved[0][0].id
+
+        const token = await createAccessToken({ userId, username })
 
         res.cookie('token', token)
         res.json({ message: 'Usuario creado correctamente' })
@@ -58,4 +61,9 @@ export const login = async (req, res) => {
 export const logout = async (req, res) => {
     res.clearCookie('token')
     res.sendStatus(200)
+}
+
+export const profile = (req, res) => {
+    console.log(req.user)
+    res.send('profile')
 }
