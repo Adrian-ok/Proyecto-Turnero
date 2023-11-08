@@ -5,8 +5,7 @@ export function ErrorLayout(props) {
   const { children } = props
 
   return (
-    <div>
-      <p>ErrorLayout</p>
+    <div className='flex justify-center items-center h-screen'>
       {children}
     </div>
   )

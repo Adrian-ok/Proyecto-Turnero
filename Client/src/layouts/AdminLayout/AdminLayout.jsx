@@ -1,12 +1,13 @@
 import React from 'react'
+import { Navbar } from '../../components'
 
 export function AdminLayout(props) {
 
-  const {children} = props
+  const { children } = props
 
   return (
     <div>
-      <p>Admin layout</p>
+      <Navbar />
 
       {children}
     </div>

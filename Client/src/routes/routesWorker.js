@@ -6,7 +6,8 @@ const routesWorker = [
         path: '/worker',
         layout: WorkerLayout,
         component: HomeWorker,
-        exact: true
+        exact: true,
+        isProtected: true
     },
 ]
 

@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Navigation } from './routes'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 function App() {
 
   return (
-    <>
-      <Navigation/>
-    </>
+    <AuthProvider>
+      <Navigation />
+    </AuthProvider>
   )
 }
 

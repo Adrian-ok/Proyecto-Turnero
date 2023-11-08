@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navbar } from '../../components'
 
 export function ClientLayout(props) {
 
@@ -6,7 +7,7 @@ export function ClientLayout(props) {
 
   return (
     <div>
-      <p>Client Layout</p>
+      <Navbar />
 
       {children}
     </div>
