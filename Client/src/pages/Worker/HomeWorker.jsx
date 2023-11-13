@@ -2,6 +2,8 @@ import React from 'react'
 
 export function HomeWorker() {
   return (
-    <div>HomeWorker</div>
+    <div>
+      <h1>HOME WORKER</h1>
+    </div>
   )
 }

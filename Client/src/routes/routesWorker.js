@@ -7,7 +7,7 @@ const routesWorker = [
         layout: WorkerLayout,
         component: HomeWorker,
         exact: true,
-        isProtected: true
+        requiresAuth: true,
     },
 ]
 

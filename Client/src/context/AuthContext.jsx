@@ -31,6 +31,7 @@ export function AuthProvider({ children }) {
     const signIn = async (user) => {
         try {
             const res = await loginRequest(user)
+            console.log('ESTO ES LOGIN', res)
             setUser(res.data)
             setIsAuthenticated(true)
         } catch (error) {
@@ -58,9 +59,11 @@ export function AuthProvider({ children }) {
                     if (!res.data) return setIsAuthenticated(false)
 
                     setIsAuthenticated(true)
+                    // console.log('ESTO ES RESS DATA USEEFFECT', res.data)
                     setUser(res.data)
                 } catch (error) {
                     setIsAuthenticated(false)
+                    console.log('PASO NULL')
                     setUser(null)
                 }
             }

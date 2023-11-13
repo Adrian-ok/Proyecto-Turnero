@@ -1,18 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import routes from './Routes'
 import { map } from 'lodash'
-import { useAuth } from '../context/AuthContext'
-
-const ProtectedRoute = ({ element, isProtected }) => {
-    const { user, isAuthenticated } = useAuth()
-
-    console.log('PROTECTOR', isProtected, isAuthenticated)
-
-    if (isProtected && !isAuthenticated) {
-        return <Navigate to="/login" />
-    }
-    return element
-}
 
 export function Navigation() {
     return (
@@ -24,18 +12,16 @@ export function Navigation() {
                         path={route.path}
                         element={
                             <route.layout>
-                                <ProtectedRoute
-                                    element={<route.component></route.component>}
-                                    isProtected={route.isProtected}
-                                />
+                                <route.component></route.component>
                             </route.layout>
                         }
                     />
                 ))}
             </Routes>
         </Router>
-    )
+    );
 }
+
 
 // <Router>
 //     <Routes>

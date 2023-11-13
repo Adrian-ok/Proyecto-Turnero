@@ -7,28 +7,28 @@ const routesClient = [
         layout: ClientLayout,
         component: Home,
         exact: true,
-        isProtected: false
+        requiresAuth: false,
     },
     {
         path: '/Login',
         layout: ErrorLayout,
         component: LoginPage,
         exact: true,
-        isProtected: false
+        requiresAuth: false,
     },
     {
         path: '/Register',
         layout: ErrorLayout,
         component: RegisterPage,
         exact: true,
-        isProtected: false
+        requiresAuth: false,
     },
     {
         path: '/client',
         layout: ClientLayout,
         component: HomeClient,
         exact: true,
-        isProtected: true
+        requiresAuth: true,
     },
 ]
 

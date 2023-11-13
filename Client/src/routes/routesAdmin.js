@@ -7,7 +7,7 @@ const routesAdmin = [
         layout: AdminLayout,
         component: HomeAdmin,
         exact: true,
-        isProtected: true
+        requiresAuth: true,
     },
 ]
 
