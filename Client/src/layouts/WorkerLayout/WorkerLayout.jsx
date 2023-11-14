@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navbar } from '../../components'
 
 export function WorkerLayout(props) {
 
@@ -6,7 +7,8 @@ export function WorkerLayout(props) {
 
   return (
     <div>
-      <p>Worker Layout</p>
+      <Navbar />
+
 
       {children}
     </div>

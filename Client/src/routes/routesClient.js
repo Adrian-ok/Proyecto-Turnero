@@ -1,10 +1,10 @@
-import { ClientLayout, ErrorLayout } from '../layouts'
+import { ClientLayout, ErrorLayout, WorkerLayout } from '../layouts'
 import { HomeClient, Home, LoginPage, RegisterPage, SelectSucursal, SelectService, SelectDatetime, SelectBarber, ConfirmTurn } from '../pages/Client'
 
 const routesClient = [
     {
         path: '/',
-        layout: ClientLayout,
+        layout: WorkerLayout,
         component: Home,
         exact: true,
     },

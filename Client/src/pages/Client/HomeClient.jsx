@@ -22,16 +22,28 @@ export function HomeClient() {
               ¡RESERVA TU TURNO YA!
             </h1>
           </div>
-          <Button gradientMonochrome='failure' size={'xl'}>RESERVAR</Button>
+          <Link to={'/selectSucursal'}>
+            <Button gradientMonochrome='failure' size={'xl'}>RESERVAR</Button>
+          </Link>
         </div>
 
       ) : (
         <>
-          <HeaderPage title='Turnos solicitados' btnTitle='Nuevo turno' />
+          <div className='flex w-full justify-around my-4'>
+            <h2 className='text-2xl font-semibold'>Turnos solicitados</h2>
+
+            <div className='flex'>
+              <Link to={'/selectSucursal'}>
+                <Button className='mr-4' color="success">
+                  Nuevo Turno
+                </Button>
+              </Link>
+            </div>
+          </div>
           <div className="bg-zinc-700 w-9/12 p-12 gap-12 flex flex-col justify-center mt-8 rounded-lg">
 
             {map(turnosListos, (item, index) => (
-              <div key={index} className='flex gap-12 text-md bg-zinc-500 p-2 rounded-md'>
+              <div key={index} className='flex gap-12 text-md bg-zinc-500 p-2 rounded-md justify-center'>
                 <p>{item.fecha}</p>
                 <p>{item.hora} hs</p>
                 <p>{item.barbero}</p>
