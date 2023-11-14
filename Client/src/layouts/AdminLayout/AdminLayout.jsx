@@ -9,7 +9,6 @@ export function AdminLayout(props) {
   const { children } = props
   const { isAuthenticated } = useAuth()
 
-  console.log(isAuthenticated)
 
   if (!isAuthenticated) {
     return <LoginPage />

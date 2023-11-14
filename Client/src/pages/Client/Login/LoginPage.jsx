@@ -2,6 +2,8 @@ import { LoginForm } from '../../../components'
 
 export function LoginPage() {
     return (
-        <LoginForm />
+        <div className='flex justify-center'>
+            <LoginForm />
+        </div>
     )
 }
