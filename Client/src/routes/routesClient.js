@@ -1,5 +1,5 @@
 import { ClientLayout, ErrorLayout } from '../layouts'
-import { HomeClient, Home, LoginPage, RegisterPage } from '../pages/Client'
+import { HomeClient, Home, LoginPage, RegisterPage, SelectSucursal, SelectService, SelectDatetime, SelectBarber, ConfirmTurn } from '../pages/Client'
 
 const routesClient = [
     {
@@ -7,28 +7,54 @@ const routesClient = [
         layout: ClientLayout,
         component: Home,
         exact: true,
-        requiresAuth: false,
     },
     {
         path: '/Login',
         layout: ErrorLayout,
         component: LoginPage,
         exact: true,
-        requiresAuth: false,
     },
     {
         path: '/Register',
         layout: ErrorLayout,
         component: RegisterPage,
         exact: true,
-        requiresAuth: false,
     },
     {
         path: '/client',
         layout: ClientLayout,
         component: HomeClient,
         exact: true,
-        requiresAuth: true,
+    },
+    {
+        path: '/selectSucursal',
+        layout: ClientLayout,
+        component: SelectSucursal,
+        exact: true,
+    },
+    {
+        path: '/selectService',
+        layout: ClientLayout,
+        component: SelectService,
+        exact: true,
+    },
+    {
+        path: '/selectDatetime',
+        layout: ClientLayout,
+        component: SelectDatetime,
+        exact: true,
+    },
+    {
+        path: '/selectBarber',
+        layout: ClientLayout,
+        component: SelectBarber,
+        exact: true,
+    },
+    {
+        path: '/confirm',
+        layout: ClientLayout,
+        component: ConfirmTurn,
+        exact: true,
     },
 ]
 

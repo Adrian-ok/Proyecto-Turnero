@@ -18,6 +18,5 @@ export function Hero() {
                 <button className='bg-red-500 hover:bg-red-600 w-48 rounded-md font-medium my-6 mx-auto py-3 text-black'>Reserva Ahora</button>
             </div>
         </div>
-
     )
 }
